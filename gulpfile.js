@@ -129,7 +129,7 @@ gulp.task('build:imagemin', function() {
 });
 
 //browser sync
-gulp.task('browser', function() {
+gulp.task('build:browser', function() {
 	broswerSync({
 		server: {
 			baseDir: './build/'
@@ -166,4 +166,4 @@ gulp.task('watch', function() {
 
 gulp.task('default', ['jshint', 'watch', 'sass', 'scripts', 'html', 'browser']);
 
-gulp.task('build', ['build:jshint', 'build:imagemin', 'build:scripts', 'build:html', 'build:styles', 'bower', 'browser']);
+gulp.task('build', ['build:jshint', 'build:imagemin', 'build:scripts', 'build:html', 'build:styles', 'bower', 'build:browser']);
