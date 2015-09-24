@@ -1,0 +1,17 @@
+{
+  "name": "gulpjs",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "public/*",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.6",
+    "foundation": "~5.5.2"
+  }
+}
