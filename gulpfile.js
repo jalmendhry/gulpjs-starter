@@ -43,7 +43,7 @@ gulp.task('html', function() {
 
 //Create compressed JS
 gulp.task('scripts', function() {
-
+	// Compile app.js first and then any modules..
 	return gulp.src(['./src/app.js', './src/**/*-module.js', './src/**/*.js'])
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'))

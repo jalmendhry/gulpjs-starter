@@ -5,7 +5,7 @@ customersModule.controller('customerCtrl', function(CustomerService) {
 		CustomerService.deleteCustomer(customer);
 	};
 
-	this.addCustomerDetails = function(model) {
-		CustomerService.addCustomer(model);
+	this.addCustomerDetails = function(customer) {
+		CustomerService.addCustomer(customer);
 	};
 });

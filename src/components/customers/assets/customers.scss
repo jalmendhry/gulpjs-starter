@@ -1,26 +1,41 @@
-table {
-	width: 100%;
+.customers {
+	
+	table {
+		width: 100%;
 
-	.form-row {
-		background: #f9f9f9;
-		
-		td {
-			text-align: center;
-		}
-
-		&:last-child {
+		.form-row {
+			background: #f9f9f9;
+			
 			td {
-				padding: 0;
+				text-align: center;
+			}
+
+			&:last-child {
+				td {
+					padding: 0;
+				}
 			}
 		}
 	}
-}
 
-.glyphicon {
-	float: right;
-	padding: 0 4px;
+	.glyphicon {
+		float: right;
+		padding: 0 4px;
 
-	&:hover {
-		color: #FA6900;
+		&:hover {
+			color: #FA6900;
+		}
+	}
+
+	.float-left {
+		float: left;
+	}
+
+	.add-margin {
+		margin-top: 16px;
+	}
+
+	.remove-margin {
+		margin-top: -16px;
 	}
 }

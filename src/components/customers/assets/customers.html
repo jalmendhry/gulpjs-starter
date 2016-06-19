@@ -1,31 +1,42 @@
-<table>
-  <thead>
-    <tr>
-      <th>Firstname</th>
-      <th>Surname</th>
-      <th>Location</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr data-ng-repeat='customer in customerData'>
-      <td>{{customer.firstname}}</td>
-      <td>{{customer.surname}}</td>
-      <td>
-		{{customer.location}} 
-  		<span class="glyphicon glyphicon-trash" data-ng-click='deleteMe($index)' ></span>
-  		<span class="glyphicon glyphicon-edit"></span>
-  		<span class="glyphicon glyphicon-plus" data-ng-click='addCustomer()'></span>
-      </td>
-    </tr>
-    <tr class='form-row' data-ng-show='formOpen'>
-    	<td><input type='text' placeholder="Firstname..." data-ng-model='user.firstname'/></td>
-    	<td><input type='text' placeholder="Surname..." data-ng-model='user.surname'/></td>
-    	<td><input type='text' placeholder="location..." data-ng-model='user.location'/></td>
-    </tr>
-    <tr class='form-row' data-ng-show='formOpen'>
-    	<td class='' colspan="3">
-    		<button class='button primary' data-ng-click='submitAdd(user)'>Add Customer</button>
-    	</td>
-    </tr>
-  </tbody>
-</table>
+<div class='customers'>
+  <table>
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Surname</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-ng-repeat='customer in customerData'>
+        <td>
+          <p class='float-left' data-ng-hide='editForm && $index === currentCustomer'>{{customer.firstname}}</p>
+          <input ng-class='{"remove-margin": editForm}' ng-show='editForm && $index === currentCustomer' type='text' value='{{customer.firstname}}' data-ng-model='customer.firstname'/>
+        </td>
+        <td>
+          <p class='float-left' data-ng-hide='editForm && $index === currentCustomer'>{{customer.surname}}</p>
+          <input ng-class='{"remove-margin": editForm}' ng-show='editForm && $index === currentCustomer' type='text' value='{{customer.surname}}' data-ng-model='customer.surname'/>
+        </td>
+        <td>
+  		    <p class='float-left' data-ng-hide='editForm && $index === currentCustomer'>{{customer.location}}</p>
+          <input  ng-show='editForm && $index === currentCustomer' type='text' value='{{customer.location}}' data-ng-model='customer.location'/>
+          <div class='glyph-wrapper'>
+      		  <span class="glyphicon glyphicon-trash" data-ng-click='deleteMe($index)'></span>
+      		  <span class="glyphicon glyphicon-edit" data-ng-click='toggleForm("edit", $index)'></span>
+      		  <span class="glyphicon glyphicon-plus" data-ng-click='toggleForm("add")'></span>
+          </div>
+        </td>
+      </tr>
+      <tr class='form-row' data-ng-show='addForm'>
+      	<td><input type='text' placeholder="Firstname..." data-ng-model='user.firstname'/></td>
+      	<td><input type='text' placeholder="Surname..." data-ng-model='user.surname'/></td>
+      	<td><input type='text' placeholder="Location..." data-ng-model='user.location'/></td>
+      </tr>
+      <tr class='form-row' data-ng-show='addForm || editForm'>
+      	<td class='' colspan="3">
+      		<button class='button primary' data-ng-click='submit(user, btnType)'>{{buttonText}}</button>
+      	</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

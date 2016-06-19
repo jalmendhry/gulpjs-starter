@@ -8,18 +8,45 @@ customersModule.directive('customerTable', function() {
 	    },
 	    templateUrl: 'customers.html',
 	    link: function(scope) {
-	    	scope.formOpen = false;
+	    	scope.addForm = false;
+	    	scope.editForm = false;
+	    	scope.btnType = '';
 
     		scope.deleteMe = function(index) {
     			scope.deleteCustomer({index: index});
     		};
 
-    		scope.addCustomer = function() {
-    			scope.formOpen = !scope.formOpen;
+    		scope.toggleForm = function(type, index) {
+    			if (type === 'add') {
+    				scope.buttonText = 'Add Customer';
+    				scope.btnType = 'add';
+    				scope.addForm = !scope.addForm;
+
+    				if (scope.editForm)
+						scope.editForm = false;
+    			} else {
+
+    				if (index !== undefined) {
+    					scope.buttonText = 'Save';
+    					scope.btnType = 'edit';
+    					scope.currentCustomer = index;
+    					scope.editForm = !scope.editForm;
+    					
+    					if (scope.addForm)
+							scope.addForm = false;
+    				}
+    			}
     		};
 
-    		scope.submitAdd = function(model) {
-    			scope.addCustomerDetails(model);
+    		scope.submit = function(model, type) {    			
+    			if (type === 'add') {
+    				scope.addCustomerDetails({customer: model});
+    				scope.addForm = false;
+    			} else {
+					// Edit
+					scope.editForm = false;
+    			}
+
     			scope.user = null;
     		};
 	    }
