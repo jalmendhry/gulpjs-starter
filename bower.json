@@ -2,7 +2,7 @@
   "name": "gulpjs",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "public/*",
+  "main": "src/*",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -12,6 +12,8 @@
   ],
   "dependencies": {
     "angular": "~1.4.6",
-    "foundation": "~5.5.2"
+    "foundation": "~5.5.2",
+    "angular-ui-router": "~0.2.18",
+    "sass-bootstrap-glyphicons": "^1.0.0"
   }
 }

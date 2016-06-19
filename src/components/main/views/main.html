@@ -1,0 +1,12 @@
+<div class='row main-container'>
+	<header class='columns main-header'>
+		<h2 class='sub-heading'>Example App</h2>
+	</header>
+
+	<div class='row' data-ng-controller="customerCtrl as ctrl">
+		<data-customer-table 
+			data-customer-data='ctrl.customerData' 
+			data-delete-customer='ctrl.deleteCustomer(index)'
+			data-add-customer-details='ctrl.addCustomerDetails(model)'/>
+	</div>
+</div>

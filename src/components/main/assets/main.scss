@@ -1,0 +1,21 @@
+* {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.main-container {
+	width: 620px;
+	margin: 0 auto;
+	
+	.main-header {
+		// background: grey;
+	}
+
+	h2 {
+		text-align: center;
+		padding: 12px;
+		&.sub-heading {
+			color: #FA6900;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+table {
+	width: 100%;
+
+	.form-row {
+		background: #f9f9f9;
+		
+		td {
+			text-align: center;
+		}
+
+		&:last-child {
+			td {
+				padding: 0;
+			}
+		}
+	}
+}
+
+.glyphicon {
+	float: right;
+	padding: 0 4px;
+
+	&:hover {
+		color: #FA6900;
+	}
+}
